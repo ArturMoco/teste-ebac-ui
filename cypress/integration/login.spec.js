@@ -13,9 +13,9 @@ context('Funcionalidade Login - Exercicio', () => {
 
     it('Deve fazer login com sucesso', () => {
         cy.get('#username')
-            .type('arturmoco@gmail.com')
+            .type('artur_felipe31@hotmail.com')
         cy.get('#password')
-            .type('#Moco81692218')
+            .type('@Arturmoco')
         cy.get('.woocommerce-form > .button')
             .click()
 
@@ -64,7 +64,7 @@ context('Funcionalidade Login - Exercicio', () => {
         cy.get('#username')
             .type('mocoartur@g.com')
         cy.get('#password')
-            .type('#Moco81692218')
+            .type('@Arturmoco')
         cy.get('.woocommerce-form > .button')
             .click()
 
@@ -74,7 +74,7 @@ context('Funcionalidade Login - Exercicio', () => {
 
     it('Deve exibir uma mensagem de erro ao inserir senha inválida', () => {
         cy.get('#username')
-            .type('arturmoco@gmail.com')
+            .type('artur_felipe31@hotmail.com')
         cy.get('#password')
             .type('exercicioteste@teste')
         cy.get('.woocommerce-form > .button')
