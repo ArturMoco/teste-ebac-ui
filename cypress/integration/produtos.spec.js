@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
 
-describe('Funcionalidade página de produtos', () => {
+describe('Exercicio - Funcionalidade da página de produtos', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        cy.visit('produtos/')
     });
 
     it('Deve selecionar um produto da lista', () => {
@@ -16,8 +16,8 @@ describe('Funcionalidade página de produtos', () => {
 
     });
 
-    it.only('deve adicionar um produto ao carrinho', () => {
-        var quantidade = 3
+    it('deve adicionar um produto ao carrinho', () => {
+        var quantidade = 4
 
         cy.get('[class="product-block grid"]')
             .contains('Aero Daily Fitness Tee')
