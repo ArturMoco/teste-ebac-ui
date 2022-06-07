@@ -13,34 +13,34 @@ context('Funcionalidade Login - Exercicio', () => {
 
     it('Deve fazer login com sucesso', () => {
         cy.get('#username')
-            .type('artur_felipe31@hotmail.com')
+            .type('arturmoco1991@gmail.com', {log: false})
         cy.get('#password')
-            .type('@Arturmoco')
+            .type('#Moco36961200', {log: false})
         cy.get('.woocommerce-form > .button')
             .click()
 
         cy.get('.page-title')
             .should('contain', 'Minha conta')
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
-            .should('contain', 'Olá, arturmoco')
+            .should('contain', 'Olá, arturmoco1991')
     })
 
     it('Deve fazer login com sucesso - usando arquivo de dados', () => {
         cy.get('#username')
-            .type(perfil.usuario)
+            .type(perfil.usuario, {log: false})
         cy.get('#password')
-            .type(perfil.senha)
+            .type(perfil.senha, {log: false})
         cy.get('.woocommerce-form > .button')
             .click()
 
         cy.get('.page-title')
             .should('contain', 'Minha conta')
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
-            .should('contain', 'Olá, arturmoco')
+            .should('contain', 'Olá, arturmoco1991')
 
     });
 
-    it.only('Deve fazer login com sucesso - usando fixture', () => {
+    it('Deve fazer login com sucesso - usando fixture', () => {
         cy.fixture('perfil')
             .then(dados => {
                 cy.get('#username')
@@ -53,7 +53,7 @@ context('Funcionalidade Login - Exercicio', () => {
                 cy.get('.page-title')
                     .should('contain', 'Minha conta')
                 cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
-                    .should('contain', 'Olá, arturmoco')
+                    .should('contain', 'Olá, arturmoco1991')
 
 
             })
@@ -64,7 +64,7 @@ context('Funcionalidade Login - Exercicio', () => {
         cy.get('#username')
             .type('mocoartur@g.com')
         cy.get('#password')
-            .type('@Arturmoco')
+            .type('#Moco36961200')
         cy.get('.woocommerce-form > .button')
             .click()
 
@@ -74,13 +74,13 @@ context('Funcionalidade Login - Exercicio', () => {
 
     it('Deve exibir uma mensagem de erro ao inserir senha inválida', () => {
         cy.get('#username')
-            .type('artur_felipe31@hotmail.com')
+            .type('arturmoco1991@gmail.com')
         cy.get('#password')
             .type('exercicioteste@teste')
         cy.get('.woocommerce-form > .button')
             .click()
 
         cy.get('.woocommerce-error > li')
-            .should('contain', 'Erro: A senha fornecida para o e-mail arturmoco@gmail.com está incorreta. ')
+            .should('contain', 'Erro: A senha fornecida para o e-mail arturmoco1991@gmail.com está incorreta. ')
     })
 })

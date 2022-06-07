@@ -12,12 +12,12 @@ describe('Funcionalidade Endereços - Faturamento e Entrega', () => {
     });
 
     it('Deve fazer cadastro de faturamento com sucesso', () => {
-        EnderecoPage.editarEnderecoFaturamento('Rita', 'Castro', 'google', 'Brasil', 'Endereço', '2888', 'Fortaleza', 'Ceará', '63544-000', '88966889909', 'paulojose@mail.com')
+        EnderecoPage.editarEnderecoFaturamento('Rita', 'Castro', 'google', 'Brasil', 'Endereço', '2888', 'Fortaleza', 'Ceará', '63544-000', '88966889909', 'arturmoco1991@gmail.com')
         cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
 
     });
 
-    it.only('Deve fazer cadastro de faturamento com sucesso - Usando arquivo de dados', () => {
+    it('Deve fazer cadastro de faturamento com sucesso - Usando arquivo de dados', () => {
         EnderecoPage.editarEnderecoFaturamento(
             dadosEndereco[1].nome,
             dadosEndereco[1].sobrenome,
@@ -32,7 +32,8 @@ describe('Funcionalidade Endereços - Faturamento e Entrega', () => {
             dadosEndereco[1].email,
             )
 
-            
+
+
         cy.get('.woocommerce-message').should('contain', 'Endereço alterado com sucesso.')
 
     });
